@@ -63,7 +63,7 @@ const About: React.FC<AboutProps> = () => {
 
   return (
     <div>
-      <div>이 페이지는 로그인 상태에서만 접속이 가능합니다.</div>;
+      <div>이 페이지는 로그인 상태에서만 접속이 가능합니다.</div>
       <Button onClick={handleLogout} fullWidth type="button">
         로그아웃
       </Button>
