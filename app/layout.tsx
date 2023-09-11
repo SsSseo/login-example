@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Toaster from "./toast";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-      </Head>
+      </head>
       <body className={inter.className}>
         <Toaster position="top-center" />
         {children}
