@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📁 (site) / components / AuthForm.tsx <br /> 
+- 사용자 인증(로그인 및 회원가입)을 담당하는 컴포넌트 <br />
+- variant : 현재 폼이 로그인 폼인지, 회원가입 폼인지 판단 <br />
+ <br />
+ 
+📁 (site) / page.tsx <br />
+- useEffect 훅을 통해 컴포넌트가 마운트 될 때 sessionStorage에서 loginToken이라는 키를 가진 토큰을 가져온다. <br />
+- 이 토큰을 사용해 사용자 정보를 요청한다. <br />
+- 만약 사용자 정보 요청이 성공적으로 이루어지면 'about'페이지로 이동한다. <br />
+- setTimeout을 이용하여 300ms뒤에 로딩상태를 false로 변경한다. <br />
+- return에는 로딩 페이지가 구현되어있다. <br />
+ <br />
+ 
+📁 (site) / page.tsx <br />
+- 사용자가 이미 로그인 되어 있는지 확인하고, 그에 다라 사용자에게 적절한 화면을 보여준다. <br />
+<br />
+ 
+📁 about / page.tsx <br />
+- about이라는 컴포넌트를 정의하고 있다. <br />
+- 로그인 한 상태에서만 접근 가능하다. (useEffect에 기능 구현 되어 있음. sessionStorage의 loginToken  확인) <br />
+- handleLogout : 로그아웃 처리 (sessionStorage에서 loginToken 삭제) <br />
+- 로그인 상태인지 확인하고, 로그아웃 기능을 제공하며, 로그인 상태에 따라 적절한 화면을 보여준다. <br />
+<br />
+ 
+📁 components / Button.tsx <br />
+- 버튼 컴포넌트<br />
+<br />
+ 
+📁 components / Input.tsx <br />
+- 인풋 컴포넌트<br />
+<br />
+ 
+📁 components / OAthButton.tsx <br />
+- 소셜 로그인 버튼 컴포넌트<br />
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
