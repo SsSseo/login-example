@@ -3,12 +3,12 @@ import clsx from "clsx";
 
 type ButtonProps = {
   type?: "button" | "submit" | "reset" | undefined;
-  fullWidth?: boolean;
+  fullWidth?: boolean; //true일 경우 버튼의 너비가 부모 요소를 꽉채움
   children?: React.ReactNode;
   onClick?: () => void;
-  secondary?: boolean;
+  secondary?: boolean; // true일 경우 버튼에 보조 스타일이 적용된다
   danger?: boolean;
-  disabled?: boolean;
+  disabled?: boolean; // true일 경우 비활성화
 };
 
 const Button: React.FC<ButtonProps> = ({
